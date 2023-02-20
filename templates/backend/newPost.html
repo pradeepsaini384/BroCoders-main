@@ -1,0 +1,92 @@
+{% extends '/backend/basic.html' %}
+{% block title%} BroCoders - Dashboard{% endblock %}
+
+{% block body %}
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">New Post</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Create A New Post Here</li>
+                        </ol>
+                        <div class="container">
+                            <form method="post" action="/addblog" enctype="multipart/form-data">
+                                <div class="form-group row">
+                                  <label for="exampleFormControlInput1">Title</label>
+                                  <input type="text" class="form-control" name = "title" id="exampleFormControlInput1" placeholder="Input Blog Title">
+                                </div>
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                      <legend class="col-form-label col-sm-2 pt-0">Category</legend>
+                                      <div class="col-sm-10">
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                          <label class="form-check-label" for="gridRadios1">
+                                            Education
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                          <label class="form-check-label" for="gridRadios2">
+                                            Business
+                                          </label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                                          <label class="form-check-label" for="gridRadios3">
+                                            Entertainment
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </fieldset>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Sub-Category</label>
+                                    <input type="text" class="form-control" name="subcategory" id="exampleFormControlInput1" placeholder="Sub-Category">
+                                  </div>
+                                  <div class="form-group row">
+                                    <div class="col-sm-2">Types</div>
+                                    <!-- <div class="col-sm-2"></div> -->
+                                    <div class="col-sm-10">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkbox" id="gridCheck1">
+                                        <label class="form-check-label" for="gridCheck1">
+                                          Latest
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkbox" id="gridCheck1">
+                                        <label class="form-check-label" for="gridCheck1">
+                                          Popular
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox"name="checkbox"  id="gridCheck1">
+                                        <label class="form-check-label" for="gridCheck1">
+                                          Feature
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="form-group">
+                                  <label for="exampleFormControlTextarea1">Short Description</label>
+                                  <textarea class="form-control" name = "shortdesc" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleFormControlTextarea1">Details Description</label>
+                                  <textarea class="form-control"name = "detaildesc"  id="exampleFormControlTextarea1" rows="5"></textarea>
+                                </div>
+                                <div class="">
+                                  <input type="file" name = "file" id="file" >
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                  </div>
+                              </form>
+                        </div>
+                    </div>
+                </main>
+               {% endblock %}

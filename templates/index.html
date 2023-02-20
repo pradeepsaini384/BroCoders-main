@@ -1,0 +1,506 @@
+
+{% extends 'basic.html' %}
+{% block title%} BroCoders - Home{% endblock %}
+
+{% block body %}
+<!-- main-slider -->
+<section class="w3l-main-slider position-relative" id="home">
+  <div class="companies20-content">
+    <div class="owl-one owl-carousel owl-theme">
+      <div class="item">
+        <li>
+          <div class="slider-info banner-view bg bg2">
+            <div class="banner-info">
+              <div class="container">
+                <div class="banner-info-bg text-center">
+                  <a href="eduBlog.html" class="blog_post_title">“Education is one thing no one can take away from you.”</a>
+                  <ul class="author-date mb-4 d-flex align-items-center mt-4 justify-content-center">
+                    <!-- <li class="circle avatar"><img src="#" alt=""></li> -->
+                    <li>by <a href="#author.html">Elin Nordegren</a></li>
+                    <!-- <li><span class="fa fa-clock-o" aria-hidden="true"></span> Mar 16, 2023</li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
+      <div class="item">
+        <li>
+          <div class="slider-info  banner-view banner-top1 bg bg2">
+            <div class="banner-info">
+              <div class="container">
+                <div class="banner-info-bg text-center">
+                  <a href="businessBlog.html" class="blog_post_title">“The fastest way to change yourself is to hang out with people who are already the way you want to be.” </a>
+                  <ul class="author-date mb-4 d-flex align-items-center mt-4 justify-content-center">
+                    <!-- <li class="circle avatar"><img src="static/images/author2.jpg" alt=""></li> -->
+                    <li>by <a href="#author.html">Reid Hoffman, co-founder of LinkedIn</a></li>
+                    <!-- <li><span class="fa fa-clock-o" aria-hidden="true"></span> Jan 22, 2023</li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
+      <div class="item">
+        <li>
+          <div class="slider-info banner-view banner-top2 bg bg2">
+            <div class="banner-info">
+              <div class="container">
+                <div class="banner-info-bg text-center">
+                  <a href="entertainmentBlog.html" class="blog_post_title">"People love gossip. It's the biggest thing that keeps the entertainment industry going."</a>
+                  <ul class="author-date mb-4 d-flex align-items-center mt-4 justify-content-center">
+                    <!-- <li class="circle avatar"><img src="static/images/author3.jpg" alt=""></li> -->
+                    <li>by <a href="#author.html">Ellen DeGeneres</a></li>
+                    <!-- <li><span class="fa fa-clock-o" aria-hidden="true"></span> Aug 14, 2023</li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- //banner-slider-->
+<section class="w3l-products py-5" id="projects">
+  <div class="container py-lg-3">
+    <div class="header-section text-center mb-md-5 mb-4">
+      <h3>Popular Posts</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        <!--Horizontal Tab-->
+        <div class="row">
+          {% for i in popular %}
+          <a href="/blogDetails/{{i[0]}}" class="col-lg-4 bg-color-three mt-lg-0 mt-0">
+            <div class="blog-article-post d-flex flex-wrap align-content-between">
+              <div class="post-content">
+                <!-- <h6 class="sub-title">Mar 16, 2021</h6> -->
+                <img src="static/images/img10.jpg" alt=" " class="img-fluid">
+                <h4 class="blog_post_title my-2">{{i[1]}} </h4>
+                <ul class="author-date mb-3 d-flex align-items-center">
+                  <li>by <b>{{i[6]}}</b></li>
+                </ul>
+                <p>{{i[2]}}</p>
+              </div>
+              <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+            </div>
+          </a>
+          {% endfor %}
+          <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+            <div class="blog-article-post d-flex flex-wrap align-content-between">
+              <div class="post-content">
+                <!-- <h6 class="sub-title">Feb 24, 2020</h6> -->
+                <img src="static/images/img11.jpg" alt=" " class="img-fluid">
+                <h4 class="blog_post_title my-2">Featured Blog Post</h4>
+                <ul class="author-date mb-3 d-flex align-items-center">
+                  <li>by <b>Daniel Roberto</b></li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+              </div>
+              <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+            </div>
+          </a>
+          <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+            <div class="blog-article-post d-flex flex-wrap align-content-between">
+              <div class="post-content">
+                <!-- <h6 class="sub-title">Mar 14, 2020</h6> -->
+                <img src="static/images/img12.jpg" alt=" " class="img-fluid">
+                <h4 class="blog_post_title my-2">Featured Blog Post</h4>
+                <ul class="author-date mb-3 d-flex align-items-center">
+                  <li>by <b>Dhony Abraham</b></li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+              </div>
+              <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+            </div>
+          </a>
+        </div>
+        <div class="row mt-5">
+          <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-0">
+            <div class="blog-article-post d-flex flex-wrap align-content-between">
+              <div class="post-content">
+                <!-- <h6 class="sub-title">Mar 16, 2021</h6> -->
+                <img src="static/images/img10.jpg" alt=" " class="img-fluid">
+                <h4 class="blog_post_title my-2">Featured Blog Post</h4>
+                <ul class="author-date mb-3 d-flex align-items-center">
+                  <li>by <b>Gwen Johnson</b></li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+              </div>
+              <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+            </div>
+          </a>
+          <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+            <div class="blog-article-post d-flex flex-wrap align-content-between">
+              <div class="post-content">
+                <!-- <h6 class="sub-title">Feb 24, 2020</h6> -->
+                <img src="static/images/img11.jpg" alt=" " class="img-fluid">
+                <h4 class="blog_post_title my-2">Featured Blog Post</h4>
+                <ul class="author-date mb-3 d-flex align-items-center">
+                  <li>by <b>Daniel Roberto</b></li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+              </div>
+              <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+            </div>
+          </a>
+          <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+            <div class="blog-article-post d-flex flex-wrap align-content-between">
+              <div class="post-content">
+                <!-- <h6 class="sub-title">Mar 14, 2020</h6> -->
+                <img src="static/images/img12.jpg" alt=" " class="img-fluid">
+                <h4 class="blog_post_title my-2">Featured Blog Post</h4>
+                <ul class="author-date mb-3 d-flex align-items-center">
+                  <li>by <b>Dhony Abraham</b></li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+              </div>
+              <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- main-slider -->
+<section class="w3l-latest-posts py-5">
+  <div class="container pt-lg-3">
+    <div class="header-section text-center mb-md-5 mb-4">
+      <h3>Latest Posts</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        {% for i in latest %}
+        <a href="/blogDetails/{{i[0]}}" class="blog-article-post height-full bg-color-three d-flex flex-wrap align-content-between">
+          <div class="post-content">
+            <h6 class="sub-title">2 Days ago</h6>
+            <h4 class="blog_post_title">{{i[1]}}
+            </h4>
+            <ul class="author-date my-4 d-flex align-items-center">
+              <li>by <b>{{i[6]}}</b></li>
+            </ul>
+            <p>{{i[2]}}</p>
+          </div>
+          <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="col-lg-4 mt-lg-0 mt-4">
+        <a href="#blog-single.html" class="blog-article-post height-full bg-color-three d-flex flex-wrap align-content-between">
+          <div class="post-content">
+            <h6 class="sub-title">1 Week ago</h6>
+            <h4 class="blog_post_title">Register a Domain or Subdomain With a Website Host
+            </h4>
+            <ul class="author-date my-4 d-flex align-items-center">
+              <li>by <b>Emma Stone</b></li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio incidunt doloribus minima minus, quidem, sed iusto alias, vero
+              cupiditate at nobis itaque aut. Doloremque excepturi distinctio earum perspiciatis, cum quas magni ratione ut quae dolore....</p>
+          </div>
+          <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+        </a>
+      </div>
+      <div class="col-lg-4 mt-lg-0 mt-4">
+        <a href="#blog-single.html" class="blog-article-post height-full bg-color-three d-flex flex-wrap align-content-between">
+          <div class="post-content">
+            <h6 class="sub-title">2 Weeks ago</h6>
+            <h4 class="blog_post_title">Home to Customize your blog's theme with 3 simple steps
+            </h4>
+            <ul class="author-date my-4 d-flex align-items-center">
+              <li>by <b>Anthony</b></li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto neque perspiciatis debitis nostrum, similique ut vel nobis explicabo
+              ducimus ratione, aut asperiores nemo veniam. Voluptatum at hic id quis delectus!</p>
+          </div>
+          <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w3l-latest-posts py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 position-relative">
+        <img src="static/images/img1.jpg" class="img-fluid" alt="" />
+        <div class="member-login-content text-center position-absolute">
+          <div>
+            <h3>All you want is a fast, secure web?</h3>
+            <p class="mt-md-4 mt-3 mb-md-5 mb-4">A friendly community that keeps this website alive. With Education, Business and Entertainment blogs —
+              for just 1
+              coffee a month. Join the
+              family.</p>
+            <a href="contact.html" class="btn btn-light theme-button">Join us</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-lg-0 mt-4">
+        <a href="#blog-single.html" class="blog-article-post bg-color-three d-flex flex-wrap align-content-between">
+          <div class="post-content">
+            <h6 class="sub-title">2 Days ago</h6>
+            <h4 class="blog_post_title">Disabled People Must Be Front And Centre On</h4>
+            <ul class="author-date my-4 d-flex align-items-center">
+              <li>by <b>John Michele</b></li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto neque perspiciatis debitis nostrum, similique ut vel nobis explicabo
+              ducimus ratione, aut asperiores nemo veniam. Voluptatum at hic id quis delectus!</p>
+          </div>
+          <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w3l-authors" id="testimonials">
+  <div class="testimonials pb-5">
+    <div class="header-section text-center mb-md-5 mb-4">
+      <h3>Books</h3>
+    </div>
+    <div class="container py-lg-3">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="slider-info">
+            <div class="img-circle">
+              <a href="#author.html"><img src="static/images/author1.jpg" class="img-fluid" alt="author image"></a>
+            </div>
+            <div class="message">
+              <ul class="blog-single-author-date d-flex align-items-center">
+                <li><a href="#author.html">Max Stoiber</a></li>
+                <li><span class="fa fa-clock-o" aria-hidden="true"></span> Sep 16, 2023</li>
+              </ul>
+              <a class="author-book-title" href="#author.html">Book title here.</a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis deleniti praesentium doloremque. Repellendus soluta quos
+                nemo quisquam consectetur temporibus quam obcaecati sapiente quaerat et.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="slider-info">
+            <div class="img-circle">
+              <a href="#author.html"><img src="static/images/author2.jpg" class="img-fluid" alt="author image"></a>
+            </div>
+            <div class="message">
+              <ul class="blog-single-author-date d-flex align-items-center">
+                <li><a href="#author.html">Daniel Roberto</a></li>
+                <li><span class="fa fa-clock-o" aria-hidden="true"></span> Oct 14, 2023</li>
+              </ul>
+              <a class="author-book-title" href="#author.html">Book title here.</a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis deleniti praesentium doloremque. Repellendus soluta quos
+                nemo quisquam consectetur temporibus quam obcaecati sapiente quaerat et.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="slider-info">
+            <div class="img-circle">
+              <a href="#author.html"><img src="static/images/author3.jpg" class="img-fluid" alt="author image"></a>
+            </div>
+            <div class="message">
+              <ul class="blog-single-author-date d-flex align-items-center">
+                <li><a href="#author.html">Dhony Abraham</a></li>
+                <li><span class="fa fa-clock-o" aria-hidden="true"></span> Noc 28, 2023</li>
+              </ul>
+              <a class="author-book-title" href="#author.html">Book title here.</a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis deleniti praesentium doloremque. Repellendus soluta quos
+                nemo quisquam consectetur temporibus quam obcaecati sapiente quaerat et.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="slider-info">
+            <div class="img-circle">
+              <a href="#author.html"><img src="static/images/author4.jpg" class="img-fluid" alt="author image"></a>
+            </div>
+            <div class="message">
+              <ul class="blog-single-author-date d-flex align-items-center">
+                <li><a href="#author.html">Marko Dugonji</a></li>
+                <li><span class="fa fa-clock-o" aria-hidden="true"></span> Dec 11, 2023</li>
+              </ul>
+              <a class="author-book-title" href="#author.html">Book title here.</a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis deleniti praesentium doloremque. Repellendus soluta quos
+                nemo quisquam consectetur temporibus quam obcaecati sapiente quaerat et.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="slider-info">
+            <div class="img-circle">
+              <a href="#author.html"><img src="static/images/author5.jpg" class="img-fluid" alt="author image"></a>
+            </div>
+            <div class="message">
+              <ul class="blog-single-author-date d-flex align-items-center">
+                <li><a href="#author.html">Anthony</a></li>
+                <li><span class="fa fa-clock-o" aria-hidden="true"></span> Feb 10, 2023</li>
+              </ul>
+              <a class="author-book-title" href="#author.html">Book title here.</a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis deleniti praesentium doloremque. Repellendus soluta quos
+                nemo quisquam consectetur temporibus quam obcaecati sapiente quaerat et.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="slider-info">
+            <div class="img-circle">
+              <a href="#author.html"><img src="static/images/author6.jpg" class="img-fluid" alt="author image"></a>
+            </div>
+            <div class="message">
+              <ul class="blog-single-author-date d-flex align-items-center">
+                <li><a href="#author.html">Emma Stone</a></li>
+                <li><span class="fa fa-clock-o" aria-hidden="true"></span> Mar 15, 2023</li>
+              </ul>
+              <a class="author-book-title" href="#author.html">Book title here.</a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis deleniti praesentium doloremque. Repellendus soluta quos
+                nemo quisquam consectetur temporibus quam obcaecati sapiente quaerat et.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w3l-latest-posts py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 position-relative mt-2">
+        <img src="static/images/img1.jpg" class="img-fluid" alt="" />
+        <div class="member-login-content text-center position-absolute">
+          <div>
+            <h3>All you want is a fast, secure web?</h3>
+            <p class="mt-md-4 mt-3 mb-md-5 mb-4">A friendly community that keeps this website alive. With books, webinars, discounts and networking —
+              for just 1
+              coffee a month. Join the
+              family.</p>
+            <a href="#signup.html" class="btn btn-light theme-button">Join us</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 position-relative mt-2">
+        <img src="static/images/img1.jpg" class="img-fluid" alt="" />
+        <div class="member-login-content text-center position-absolute">
+          <div>
+            <h3>All you want is a fast, secure web?</h3>
+            <p class="mt-md-4 mt-3 mb-md-5 mb-4">A friendly community that keeps this website alive. With books, webinars, discounts and networking —
+              for just 1
+              coffee a month. Join the
+              family.</p>
+            <a href="#signup.html" class="btn btn-light theme-button">Join us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /w3l-content-grids-->
+<!-- our products -->
+<!-- //our products -->
+<section class="w3l-index-7 py-5">
+  <div class="container py-lg-3">
+    <div class="header-section text-center mb-5">
+      <h3>Don't Miss - Browse all topics</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="d-flex flex-wrap align-content-between blog-article-post">
+          <div class="post-content">
+            <h6 class="sub-title">Programming</h6>
+            <h4 class="blog_post_title">The loss is not all that surprising</h4>
+            <ul class="more-post-links mt-4">
+              <li><a href="#blog.html">Changing the topic scope</a></li>
+              <li><a href="#blog.html">Your Blog Posts are Boring</a></li>
+              <li><a href="#blog.html">Today Highlights</a></li>
+              <li><a href="#blog.html">The Beginner's Guide to Starting a Successful Blog</a></li>
+              <li><a href="#blog.html">10 Fresh Ways to Get Better</a></li>
+              <li><a href="#blog.html">Changing the topic scope</a></li>
+              <li><a href="#blog.html">Your Blog Posts are Boring</a></li>
+              <li><a href="#blog.html">10 Fresh Ways to Get Better</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-lg-0 mt-5">
+        <div class="d-flex flex-wrap align-content-between blog-article-post">
+          <div class="post-content">
+            <h6 class="sub-title">Entertainment News</h6>
+            <h4 class="blog_post_title">Amazing Posts to improve your skill</h4>
+            <ul class="more-post-links mt-4">
+              <li><a href="#blog.html">Changing the topic scope</a></li>
+              <li><a href="#blog.html">Your Blog Posts are Boring</a></li>
+              <li><a href="#blog.html">Today Highlights</a></li>
+              <li><a href="#blog.html">The Beginner's Guide to Starting a Successful Blog</a></li>
+              <li><a href="#blog.html">10 Fresh Ways to Get Better</a></li>
+              <li><a href="#blog.html">Changing the topic scope</a></li>
+              <li><a href="#blog.html">Your Blog Posts are Boring</a></li>
+              <li><a href="#blog.html">10 Fresh Ways to Get Better</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-lg-0 mt-5">
+        <div class="d-flex flex-wrap align-content-between blog-article-post">
+          <div class="post-content">
+            <h6 class="sub-title">Graphic Design</h6>
+            <h4 class="blog_post_title">Instantly Improve your Ui Design.</h4>
+            <ul class="more-post-links mt-4">
+              <li><a href="#blog.html">Changing the topic scope</a></li>
+              <li><a href="#blog.html">Your Blog Posts are Boring</a></li>
+              <li><a href="#blog.html">Today Highlights</a></li>
+              <li><a href="#blog.html">The Beginner's Guide to Starting a Successful Blog</a></li>
+              <li><a href="#blog.html">10 Fresh Ways to Get Better</a></li>
+              <li><a href="#blog.html">Changing the topic scope</a></li>
+              <li><a href="#blog.html">Your Blog Posts are Boring</a></li>
+              <li><a href="#blog.html">10 Fresh Ways to Get Better</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- subscribe form -->
+<section class="w3l-subscribe">
+  <div class="main-w3 py-5">
+    <div class="container py-lg-3">
+      <div class="grids-forms text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <span class="fa fa-envelope mb-3" aria-hidden="true"></span>
+            <div class="header-section text-center">
+              <h3>Keep up to date - Get Email updates</h3>
+              <p>Get our latest news straight into your inbox</p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-md-5 mt-4">
+          <div class="col-lg-7 col-md-9 mx-auto main-midd-2">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            
+            <div class="alert alert-success" role="alert">
+              {{ message }}
+            </div>
+            {% endfor %}
+            
+            {% endif %}
+            {% endwith %}
+
+            <form action="/email" method="post" class="rightside-form">
+              <input type="email" id= "email" name="email" placeholder="Input your e-mail" required>
+              <button type="submit" class="btn btn-primary theme-button">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+<!-- //subscribe form -->
+
+ 

@@ -1,0 +1,75 @@
+
+{% extends 'basic.html' %}
+{% block title%} BroCoders - Contact{% endblock %}
+
+{% block body %}
+<!-- //Domain modal -->
+<section class="w3l-breadcrumb py-5">
+  <div class="container">
+    <h6 class="sub-title">Get in touch</h5>
+      <div class="header-section">
+        <h3>Contact Us</h3>
+        <p>We can help. Our team of experts is on hand to answer  your questions.</p>
+      </div>
+  </div>
+</section>
+<!-- contact form -->
+<section class="w3l-contact" id="contact">
+	<div class="container py-5">
+		<div class="contacts12-main py-md-3">
+			<div class="header-section text-center">
+				<h3 class="mb-md-5 mb-4">Fill out the form.
+			</div>
+			<form action="https://sendmail.w3layouts.com/submitForm" method="post" class="">
+				<div class="main-input">
+					<input type="text" name="w3lName" placeholder="Enter your name" class="contact-input" required="" />
+					<input type="email" name="w3lSender" placeholder="Enter your mail" class="contact-input" required="" />
+					<input type="email" name="w3lSubject" placeholder="Subject" class="contact-input" />
+					<textarea class="contact-textarea contact-input" name="w3lMessage" placeholder="Enter your message" required=""></textarea>
+				</div>
+				<div class="text-center">
+					<button class="btn-primary btn theme-button w-100">Send</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="contant11-top-bg py-5">
+		<div class="container py-lg-3">
+			<div class="d-grid contact section-gap">
+				<div class="contact-info-left d-grid">
+					<div class="contact-info">
+						<div class="icon">
+							<span class="fa fa-location-arrow" aria-hidden="true"></span>
+						</div>
+						<div class="contact-details">
+							<h4>Address:</h4>
+							<p>Jecrc University, Jaipur</p>
+						</div>
+					</div>
+					<div class="contact-info">
+						<div class="icon">
+							<span class="fa fa-phone" aria-hidden="true"></span>
+						</div>
+						<div class="contact-details">
+							<h4>Phone:</h4>
+							<p><a href="tel:+917412846037">+91 7412846037</a></p>
+							<p><a href="tel:+919521122008">+91 9521122008</a></p>
+						</div>
+					</div>
+					<div class="contact-info">
+						<div class="icon">
+							<span class="fa fa-envelope-open-o" aria-hidden="true"></span>
+						</div>
+						<div class="contact-details">
+							<h4>Mail:</h4>
+							<p><a href="mailto:mail@example.com" class="email">ramswami0021@gmail.com</a></p>
+							<p><a href="mailto:mail@example.com" class="email">pradeepsaini384@gmail.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //contact form -->
+ {% endblock %}
