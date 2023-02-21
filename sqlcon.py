@@ -59,12 +59,12 @@ def all_blog():
     cursor.execute("""SELECT * FROM `blog` """)
     all_blog = cursor.fetchall()
     for i in all_blog:
-        category = ['popular','latest','feature']
-        if i[11] == category[0]:
+        category = ['Education','Business','Entertainment']
+        if i[9] == category[0]:
             p += 1
-        elif i[11] == category[1]:
+        elif i[9] == category[1]:
             l += 1
-        elif i[11] == category[2]:
+        elif i[9] == category[2]:
             f += 1
         else:
             pass

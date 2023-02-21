@@ -86,14 +86,14 @@ def email():
     
 
 #admin control goes from here
-@app.route('/dashboard')
-def dashboard():
-    all_admin,lst = all_blog()
-    # popular
-    # letest
-    # feature
-    total_admin = len(all_admin)
-    return render_template('/backend/index.html',all_admin=all_admin,total_admin=total_admin,popular=lst[0],letest=lst[1],feature=lst[2])
+# @app.route('/dashboard')
+# def dashboard():
+#     all_admin,lst = all_blog()
+#     # popular
+#     # letest
+#     # feature
+#     total_admin = len(all_admin)
+#     return render_template('/backend/index.html',all_admin=all_admin,total_admin=total_admin,popular=lst[0],letest=lst[1],feature=lst[2])
 
 @app.route('/newpost')
 def newpost():
@@ -118,15 +118,19 @@ def register():
 def admin():
     return render_template('/backend/login.html')
     
-@app.route('/auth',methods = ['GET','POST'])
+@app.route('/dashboard',methods = ['GET','POST'])
 def auth():
     name = request.form.get("name")
     password = request.form.get("password")
     user_data =  authentication(name,password)
-    
+    print(name,password)
     if(len(user_data)>0):
-        return redirect("/dashboard",code=302)
-    
+        all_admin,lst = all_blog()
+        total_admin = len(all_admin)
+        # return redirect("/dashboard",code=302)
+        return render_template('/backend/index.html',all_admin=all_admin,total_admin=total_admin,popular=lst[0],letest=lst[1],feature=lst[2],name=name,password=password)
+    else:
+        return render_template('/backend/login.html')
 @app.route('/addblog',methods=['GET','POST'])
 def addblog():
     blogid = request.form.get("blogid")
