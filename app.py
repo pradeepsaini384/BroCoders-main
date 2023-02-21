@@ -1,5 +1,6 @@
 from flask import Flask,render_template ,Response,redirect,request,flash,url_for,Request
-from sqlcon import authentication,registration,blog_data , blog_detail,email_auth,all_blog
+from sqlcon import authentication,registration,blog_data , blog_detail,email_auth,all_blog,new_post,education_data,Entertainment_data,business_data
+# from PIL import Image
 import os
 from werkzeug.utils import secure_filename
 
@@ -7,11 +8,18 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 UPLOAD_FOLDER = 'static/images/blog_img/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-#for home page
+app.config['BLOG_ID'] = 11
+
+def blog_id():
+    
+    id= 'blog'+str(app.config['BLOG_ID'])
+    (app.config['BLOG_ID']) = (app.config['BLOG_ID'])+1
+    return id
+#for home pageb
 @app.route('/')
 def home():
     popular,latest,feature = blog_data()
-    print(popular,latest,feature)
+    # print(popular,latest,feature)
     return render_template('index.html',popular=popular,latest=latest,feature=feature)
 
 
@@ -49,7 +57,7 @@ def contact():
 @app.route('/blogDetails/<id>')
 def blogDetails(id):
     blog_details = blog_detail(id)
-    print(blog_details)
+    # print(blog_details)
     return render_template('blogDetails.html',blog_details=blog_details)
 
 
@@ -92,13 +100,16 @@ def newpost():
     return render_template('/backend/newPost.html')
 @app.route('/education')
 def education():
-    return render_template('/backend/education.html')
+    edu_data = education_data()
+    return render_template('/backend/education.html',edu_data=edu_data)
 @app.route('/business')
 def business():
-    return render_template('/backend/business.html')
+    bis_data = business_data()
+    return render_template('/backend/business.html',bis_data=bis_data)
 @app.route('/Entertainment')
 def Entertainment():
-    return render_template('/backend/entertainment.html')
+    ent_data = Entertainment_data()
+    return render_template('/backend/entertainment.html',ent_data=ent_data)
 
 @app.route('/register')
 def register():
@@ -118,20 +129,38 @@ def auth():
     
 @app.route('/addblog',methods=['GET','POST'])
 def addblog():
+    blogid = request.form.get("blogid")
     title = request.form.get("title")
+    authname = request.form.get("authname")
+    rating = request.form.get("rating")
+
     Category = request.form.get("gridRadios")
+    # print(Category)
     subcategory = request.form.get("subcategory")
     type = request.form.get("checkbox")
+    # print(type)
     shortdesc = request.form.get("shortdesc")
     detaildesc = request.form.get("detaildesc")
     file = request.files['file']
-    print(file)
+    # print(file)
     if file:
+        # resized_image = Image.open(file)
+        # resized_image = resized_image.resize((300,230))
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return 'done'
+        filedic = '/static/images/blog_img/'+filename
+        # print(filedic)
+        # print(blog_id())
+        
+        
+        add = new_post(blogid,title,authname,rating,Category,subcategory,type,shortdesc,detaildesc,filedic)
+        # add = new_post(dict)
+        if add=='done':
+            flash("Blog Added Successfully")
+            return redirect(url_for('newpost'))
+
     else:
         return'nahi beta '
-    
+    # return 'test done'
 if __name__ == '__main__':
     app.run(debug=True)

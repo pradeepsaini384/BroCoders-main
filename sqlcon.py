@@ -1,5 +1,6 @@
 import mysql.connector
 
+# conn = mysql.connector.connect(host = "134.119.205.13",user= "wingogam_admin",password ="iAJ#D=Btre9O",database="wingogam_blog")
 conn = mysql.connector.connect(host = "localhost",user= "root",password ="",database="blog")
 cursor = conn.cursor()
 
@@ -19,9 +20,16 @@ def email_auth(email):
         done = 0
         return done
         
-def addblog(title,category,subcategory,type,shortdesc,detail):
+def new_post(blogid,title,authname,rating,category,subcategory,type,shortdesc,detaildesc,filedic):
+# def new_post(dict):
 
-    
+    # rating = 10
+    keywords = 'pradeep'
+    # author = "pradeep saini"
+    cursor.execute("""INSERT INTO `blog` (`id`,`title`,`category`,`sub-category`,`type`,`short_dis`,`details_dis`,`img`,`rating`,`keywords`,`author`) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')""".format(blogid,title,category,subcategory,type,shortdesc,detaildesc,filedic,rating,keywords,authname))
+    conn.commit()
+    return 'done'
+
 def authentication(email,password):
     cursor.execute("""SELECT * FROM `admin` WHERE `name` LIKE '{}' AND `pwd` LIKE '{}'""".format(email,password))
     users = cursor.fetchall()
@@ -66,5 +74,17 @@ def all_blog():
     return all_admin,lst
 def blog_detail(id):
     cursor.execute("""SELECT * FROM `blog` WHERE `id` LIKE '{}'""".format(id))
+    blog_details = cursor.fetchall()
+    return blog_details
+def education_data():
+    cursor.execute("""SELECT * FROM `blog` WHERE `category` LIKE 'education' """)
+    blog_details = cursor.fetchall()
+    return blog_details
+def Entertainment_data():
+    cursor.execute("""SELECT * FROM `blog` WHERE `category` LIKE 'Entertainment' """)
+    blog_details = cursor.fetchall()
+    return blog_details
+def business_data():
+    cursor.execute("""SELECT * FROM `blog` WHERE `category` LIKE 'business' """)
     blog_details = cursor.fetchall()
     return blog_details

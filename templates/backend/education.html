@@ -37,16 +37,18 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        {% for i in edu_data %}
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
+                                            <td>{{i[0]}}</td>
+                                            <td>{{i[1]}}</td>
+                                            <td>{{i[6]}}</td>
+                                            <td>{{i[7]}}</td>
+                                            <td>{{i[10]}}</td>
                                             <td>
                                                 <button type="button" class="btn btn-secondary" >Details</button>
                                             </td>
                                         </tr>
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
